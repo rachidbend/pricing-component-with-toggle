@@ -38,9 +38,319 @@ body {
 ***************************** */
 
 .price {
-    width: 144rem;
+    max-width: 144rem;
     font-size: 1.5rem;
     margin: 0 auto;
     display: block;
     background-color: var(--color-very-light-grayish-blue);
+    position: relative;
+
 }
+
+.price__container {
+    position: relative;
+    z-index: 10;
+}
+
+.price__background-top {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 80%;
+
+}
+
+.price__background-bottom {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 35%;
+
+}
+
+/* ****************************
+    HEAD
+***************************** */
+
+.price__head {
+    display: inline-block;
+    width: 100%;
+    margin: 6rem 0;
+    text-align: center;
+}
+
+.price__heading {
+    margin: 0 auto;
+    font-size: 3.5rem;
+    color: var(--color-grayish-blue);
+}
+
+
+/* ****************************
+    TOGGLE
+***************************** */
+
+.price__toggle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.price__toggle p {
+    margin: 2rem;
+    font-weight: 700;
+    color: var(--color-light-grayish-blue);
+    font-size: 1.6rem;
+}
+
+.price__switch {
+    width: 8rem;
+    height: 4rem;
+    position: relative;
+
+
+}
+
+.price__switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.price__switch .slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-image: linear-gradient(to right, var(--color-gradiant-start), var(--color-gradiant-end));
+    border-radius: 50rem;
+    cursor: pointer;
+}
+
+.slider::before {
+    content: "";
+    position: absolute;
+    height: 3.2rem;
+    width: 3.2rem;
+    border-radius: 50%;
+    background-color: white;
+    top: 4px;
+    left: 4px;
+    transition: left .3s cubic-bezier(.57,1,.69,.92);
+}
+
+
+.price__switch input:checked + .slider::before {
+    left: 44px;
+}
+
+
+
+
+
+/* ****************************
+    CARD
+***************************** */
+.price__cards {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    margin-top: 8rem;
+    position: relative;
+    z-index: 99;
+    padding-bottom: 8rem;
+
+}
+.price__card {
+    width: 35rem;
+
+    background-color: white;
+    opacity: 1;
+    z-index: 99;
+    text-align: center;
+    font-weight: 700;
+    border-radius: 1rem;
+}
+
+/* ---------------- */
+
+.card__heading {
+    margin: 2rem;
+    color: var(--color-grayish-blue);
+    font-size: 1.8rem;
+    margin-top: 3rem;
+}
+.card__heading--middle {
+    color: white;
+    margin-top: 5.5rem;
+}
+
+.card__price {
+    font-size: 7rem;
+    color: var(--color-dark-grayish-blue);
+    
+}
+.card__price--middle {
+    color: white;
+}
+.card__price--year {
+    display: none;
+}
+.card--middle {
+    background-color: none;
+    color: white;
+    background-image: linear-gradient(to right bottom, var(--color-gradiant-start), var(--color-gradiant-end));
+}
+.dollar {
+    font-size: 4.5rem;
+
+
+}
+
+/* ------------------ */
+
+.card__list {
+    list-style: none;
+    margin-top: 2rem;
+}
+
+.card__item {
+    border-bottom: 1px solid var(--color-light-grayish-blue);
+    width: 80%;
+    margin: 0 auto;
+    padding: 1.8rem;
+    color: var(--color-grayish-blue);
+}
+.card__item:first-child {
+    border-top: 1px solid var(--color-light-grayish-blue);
+}
+
+.card--middle .card__item  {
+    color: white;
+}
+
+
+/* ----------------------- */
+
+.card__button {
+    display: block;
+    margin: 3rem auto;
+    background-image: linear-gradient(to right,  var(--color-gradiant-start), var(--color-gradiant-end));
+    padding: 1.5rem ;
+    border-radius: 6px;
+    width: 80%;
+    text-decoration: none;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
+    font-size: 1.2rem;
+    border: 1px solid transparent;
+    transition: background-image 1s;
+
+}
+
+.card__button:hover {
+    background-image: linear-gradient(white , white);
+    border: 1px solid var(--color-grayish-blue);
+}
+
+.card__button--middle {
+
+    background-image: linear-gradient(white, white);
+    margin-bottom: 5.5rem;
+
+}
+
+.card__button--middle:hover {
+    background-image: linear-gradient(to right,  var(--color-gradiant-start), var(--color-gradiant-end));
+    border: 1px solid white;
+}
+
+.card__button p {
+    background-image: linear-gradient(white, white);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    
+}
+
+
+.card__button--middle p {
+    background-image: linear-gradient(to right,  var(--color-gradiant-start), var(--color-gradiant-end));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
+.card__button:hover p {
+    background-image: linear-gradient(to right,  var(--color-gradiant-start), var(--color-gradiant-end));
+
+}
+
+.card__button--middle:hover p {
+    background-image: linear-gradient(white, white);
+
+}
+
+
+@media screen and (max-width: 600px) {
+    .price__cards {
+        flex-direction: column;
+    }
+
+    .price__background-top {
+        height: auto;
+        width: 80%;
+    }
+
+    .price__background-bottom {
+        height: auto;
+        width: 80%;
+        display: none;
+    }
+
+    .price__card {
+        margin-top: 3rem;
+    }
+
+    .card__button--middle {
+        margin: 3rem auto;
+    }
+
+    .card__heading {
+        margin: 3rem;
+    }
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
